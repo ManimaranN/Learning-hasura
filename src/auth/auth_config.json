@@ -1,0 +1,6 @@
+{
+  "domain": "dev-3dv6vtje.auth0.com",
+  "clientId": "okylKlGtPPKuBJTilkC9acYPcxxrcy5b",
+  "redirect_uri": "http://localhost:3000",
+  "audience": "https://mani-insta.herokuapp.com/v1/graphql"
+}
