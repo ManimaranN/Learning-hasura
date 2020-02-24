@@ -11,7 +11,7 @@ function Header() {
       <div className="Nav-menus">
         <div className="Nav-brand">
           <Link className="Nav-brand-logo" to="/">
-            Instagram
+            Manigram
           </Link>
         </div>
         {!isAuthenticated && (

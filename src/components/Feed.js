@@ -9,6 +9,9 @@ export const POST_LIST = gql`
   {
     Post(order_by: { created_at: desc }) {
       id
+      User {
+        id
+      }
     }
   }
 `;
@@ -17,7 +20,7 @@ function Feed(props) {
   const { loading, error, data } = useQuery(POST_LIST);
 
   if (loading) return "Loading...";
-  if (error) return `Error! ${error.message}`;
+  if (error) return `Error1! ${error.message}`;
 
   return (
     <>

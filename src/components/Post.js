@@ -6,6 +6,7 @@ import { useQuery } from "@apollo/react-hooks";
 import Like from "./Like.js";
 import { timeDifferenceForDate } from "../utils/TimeDifference.js";
 import { Container } from "react-bootstrap";
+import Avatar from "../utils/img/avatar.svg";
 
 export const POST_INFO = gql`
   query($id: Int!) {
@@ -42,7 +43,7 @@ function Post(props) {
               <div className="Post-user">
                 <div className="Post-user-avatar">
                   <Link to={"/user/" + post.User.id}>
-                    <img alt={post.User.name} src={post.User.avatar} />
+                    <img alt={post.User.name} src={Avatar} />
                   </Link>
                 </div>
                 <div className="Post-user-nickname">

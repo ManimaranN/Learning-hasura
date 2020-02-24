@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import "../styles/App.css";
 import Header from "./Header.js";
-import Feed from "./Feed.js";
+import Feed from "./Feed";
+import SecuredRoute from "./SecuredRoute";
+import Profile from "./Profile";
+import Post from "./Post";
+import Upload from "./Upload";
 
 // for authentication using auth0
 import { useAuth0 } from "../auth/react-auth0-wrapper";
@@ -41,7 +45,7 @@ function App() {
 
   // for apollo client
   const httpLink = new HttpLink({
-    uri: "https://instagram-clone-3.herokuapp.com/v1/graphql"
+    uri: "https://mani-insta.herokuapp.com/v1/graphql"
   });
 
   const authLink = setContext((_, { headers }) => {
@@ -70,8 +74,11 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Header />
+      {isAuthenticated && <Upload />}
       <Switch>
         <Route exact path="/" component={Feed} />
+        <Route path={"/post/:id"} component={Post} />
+        <SecuredRoute path={"/user/:id"} component={Profile} />
       </Switch>
     </ApolloProvider>
   );
