@@ -50,7 +50,9 @@ function App() {
 
   const authLink = setContext((_, { headers }) => {
     const token = accessToken;
+
     if (token) {
+      console.log(token, ":token");
       return {
         headers: {
           ...headers,

@@ -25,6 +25,7 @@ function Header() {
 
         {isAuthenticated && (
           <>
+            {console.log("user: ", user)}
             <Link className="Nav-user-button" to={"/user/" + user.sub} />
           </>
         )}
